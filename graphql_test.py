@@ -2,12 +2,15 @@
 
 """Testing connecting to Drone Deploy GraphQL API"""
 
+import os
 import requests
-import json
+from dotenv import load_dotenv
+
+load_dotenv()
 
 endpoint = "https://dronedeploy.com/graphql"
 
-token = "752d4602fe6441f6b4c5a91567a5e8c7"
+token = os.getenv("DRONE_DEPLOY_API_KEY")
 
 query = """
 
