@@ -2,6 +2,7 @@
 
 """Testing connecting to Drone Deploy GraphQL API"""
 import os
+import json
 import requests
 from dotenv import load_dotenv
 
@@ -50,7 +51,7 @@ response = requests.post(
 
 if response.status_code == 200:
     print("We succeeded")
-    print(response.text)
+    print(json.loads(response.text))
 else:
     print(response.status_code)
     print(response.text)
